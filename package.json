@@ -1,8 +1,9 @@
 {
-  "name": "get5node",
+  "name": "get5match-node",
   "version": "1.0.0",
   "description": "Quickly create a GET5 Config file with Node",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib",
   "scripts": {
     "test": "jest",
     "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
