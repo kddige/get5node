@@ -77,3 +77,7 @@ it("should throw error when removing non existing map from maplist", () => {
     match.removeMap("de_dust2");
   }).toThrowError(MatchErrors.MAP_NOT_IN_LIST);
 });
+
+it("fake test", () => {
+  expect(true).toBe(false);
+});
