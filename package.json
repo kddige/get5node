@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
     "build": "tsc"
   },
   "keywords": [],
