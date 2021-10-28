@@ -1,7 +1,7 @@
 {
   "name": "get5node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Quickly create a GET5 Config file with Node",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -9,12 +9,20 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "kddige",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kddige/get5node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kddige/get5node/issues"
+  },
+  "homepage": "https://github.com/kddige/get5node"
 }

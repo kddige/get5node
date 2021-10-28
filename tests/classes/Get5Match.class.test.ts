@@ -1,7 +1,7 @@
-import Match, { MatchErrors } from "../../src/classes/Match.class";
-("../../src/classes/MatchConfig.class");
+import { Get5Match } from "../../src/classes";
+import { Get5MatchErrors } from "../../src/types";
 
-const match = new Match({
+const match = new Get5Match({
   matchid: "test",
   maplist: [],
   num_maps: 1,
@@ -37,13 +37,13 @@ const match = new Match({
 const validSteamId = "STEAM_0:1:523139124";
 
 it("should create a MatchConfig", () => {
-  expect(match).toBeInstanceOf(Match);
+  expect(match).toBeInstanceOf(Get5Match);
 });
 
 it("should throw error when adding invalid steam id", () => {
   expect(() => {
     match.addPlayer("STEAM:1:12321", "team1");
-  }).toThrowError(MatchErrors.INVALID_STEAMID);
+  }).toThrowError(Get5MatchErrors.INVALID_STEAMID);
 });
 
 it("should add a player when adding valid steam id", () => {
@@ -64,7 +64,7 @@ it("should add a map when adding any map to maplist", () => {
 it("should throw error when adding existing map to maplist", () => {
   expect(() => {
     match.addMap("de_dust2");
-  }).toThrowError(MatchErrors.MAP_ALREADY_IN_LIST);
+  }).toThrowError(Get5MatchErrors.MAP_ALREADY_IN_LIST);
 });
 
 it("should remove a map when removing any map from maplist", () => {
@@ -75,5 +75,5 @@ it("should remove a map when removing any map from maplist", () => {
 it("should throw error when removing non existing map from maplist", () => {
   expect(() => {
     match.removeMap("de_dust2");
-  }).toThrowError(MatchErrors.MAP_NOT_IN_LIST);
+  }).toThrowError(Get5MatchErrors.MAP_NOT_IN_LIST);
 });
