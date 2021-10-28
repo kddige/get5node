@@ -1,13 +1,16 @@
 {
-  "name": "get5match-node",
-  "version": "1.0.0",
+  "name": "get5node-ts",
+  "version": "1.0.1",
   "description": "Quickly create a GET5 Config file with Node",
   "main": "lib/index.js",
   "types": "lib",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "jest",
     "test:ci": "jest --ci --reporters='default' --reporters='./github-actions-reporter'",
-    "build": "tsc"
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "kddige",
