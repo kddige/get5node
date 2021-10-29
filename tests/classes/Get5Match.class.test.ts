@@ -34,26 +34,34 @@ const match = new Get5Match({
   },
   veto_first: "",
 });
-const validSteamId = "STEAM_0:1:523139124";
+const validSteamId2 = "STEAM_0:1:000000000";
+const validSteamId3 = "[U:1:1046278249]";
+const validSteamId64 = "76561199006543977"
 
 it("should create a MatchConfig", () => {
   expect(match).toBeInstanceOf(Get5Match);
 });
 
-it("should throw error when adding invalid steam id", () => {
-  expect(() => {
-    match.addPlayer("STEAM:1:12321", "team1");
-  }).toThrowError(Get5MatchErrors.INVALID_STEAMID);
+it("should add a player when adding valid Steam 2 ID", () => {
+  match.addPlayer(validSteamId2, "team1");
+  expect(match.config.team1.players).toContain(validSteamId2);
 });
 
-it("should add a player when adding valid steam id", () => {
-  match.addPlayer(validSteamId, "team1");
-  expect(match.config.team1.players).toContain(validSteamId);
+it("should add a player when adding valid Steam 3 ID", () => {
+  expect(() => {
+    match.addPlayer(validSteamId3, "team1");
+  }).not.toThrowError(Get5MatchErrors.INVALID_STEAMID);
+});
+
+it("should add a player when adding valid Steam 64 ID", () => {
+  expect(() => {
+    match.addPlayer(validSteamId64, "team1");
+  }).not.toThrowError(Get5MatchErrors.INVALID_STEAMID);
 });
 
 it("should remove a player when removing valid steam id", () => {
-  match.removePlayer(validSteamId, "team1");
-  expect(match.config.team1.players).not.toContain(validSteamId);
+  match.removePlayer(validSteamId2, "team1");
+  expect(match.config.team1.players).not.toContain(validSteamId2);
 });
 
 it("should add a map when adding any map to maplist", () => {
